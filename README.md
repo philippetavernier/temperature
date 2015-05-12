@@ -1,1 +1,2 @@
 # temperature
+ * install ADS libraries
