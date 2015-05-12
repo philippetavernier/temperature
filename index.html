@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Temperature</title>
+<script>
+function retrieve() {
+                var date = Date();
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                                document.getElementById("tmp").innerHTML = xmlhttp.responseText + "<br /> Mis à jour le : " + date;
+                        }
+                }
+                xmlhttp.open("GET", "a.php", true);
+                xmlhttp.send();
+                window.setTimeout(retrieve, 1000);
+}
+retrieve();
+</script>
+</head>
+<body>
+<div id="tmp"></div>
+</body>
+</html>
+
